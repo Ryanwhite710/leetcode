@@ -40,12 +40,22 @@ class Solution(object):
 
         def bfs(r, c):
             queue = deque()
-            visit.add(queue)
+            queue.append((r,c))
+            visit.add((r,c))
+
+            directions = [(1,0),(-1,0), (0,1),(0,-1)]
+
+            while queue:
+                row, col = queue.popleft()
+                for dr, dc in directions:
+                    return 0
+
+
 
 
         for r in range(rows):
             for c in range(columns):
-                if board[r][c] == "X" and (r,c) not in visit:
+                if board[r][c] == "O" and (r,c) not in visit:
                     bfs(r, c)
             return 0
 
